@@ -2,8 +2,8 @@ version: '3.9'
 
 services:
   ai-backend:
-    build:
-      context: ./ai-backend
+    image: node:20-slim
+    working_dir: /app
     ports:
       - '8080:8080'
     environment:
@@ -12,18 +12,26 @@ services:
       - SHOPIFY_STORE=maestro-ai-qrc97.myshopify.com
     volumes:
       - ./ai-backend:/app
-      - /app/node_modules
+    command: >
+      bash -c "
+      npm install &&
+      npm start
+      "
 
   admin-dashboard:
-    build:
-      context: ./admin-dashboard
+    image: node:20-slim
+    working_dir: /app
     ports:
       - '3000:3000'
     environment:
       - VITE_API_URL=http://localhost:8080
     volumes:
       - ./admin-dashboard:/app
-      - /app/node_modules
+    command: >
+      bash -c "
+      npm install &&
+      npm run dev
+      "
 
 networks:
   default:
