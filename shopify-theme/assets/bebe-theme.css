@@ -1,0 +1,180 @@
+:root {
+  --pink: #ff4fd8;
+  --purple: #8a2be2;
+  --blue: #0099ff;
+  --gold: #ffd700;
+  --dark: #111;
+}
+
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, var(--pink), var(--purple), var(--blue));
+  color: white;
+}
+
+.bebe-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--gold);
+}
+
+nav a {
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+.bebe-hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.bebe-hero h1 {
+  font-size: 60px;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.bebe-hero p {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.bebe-button {
+  background: var(--gold);
+  color: black;
+  padding: 15px 35px;
+  border-radius: 40px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.bebe-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+}
+
+.ai-stylist,
+.vip,
+.rewards,
+.live-shop {
+  padding: 60px 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  margin: 20px 0;
+}
+
+.ai-stylist h2,
+.vip h2,
+.rewards h2,
+.live-shop h2 {
+  font-size: 36px;
+  margin: 0 0 20px 0;
+}
+
+.ai-stylist input {
+  padding: 12px 20px;
+  width: 100%;
+  max-width: 400px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.ai-stylist button {
+  background: var(--gold);
+  color: black;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 10px 5px;
+  transition: transform 0.3s;
+}
+
+.ai-stylist button:hover {
+  transform: scale(1.05);
+}
+
+.rewards-info {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.bebe-footer {
+  padding: 50px 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  margin-top: 40px;
+}
+
+.bebe-footer h3 {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+}
+
+.bebe-footer p {
+  margin: 10px 0;
+}
+
+.bebe-footer a {
+  color: var(--gold);
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .bebe-header {
+    flex-direction: column;
+  }
+
+  nav {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .bebe-hero h1 {
+    font-size: 35px;
+  }
+
+  .bebe-hero p {
+    font-size: 18px;
+  }
+
+  .rewards-info {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

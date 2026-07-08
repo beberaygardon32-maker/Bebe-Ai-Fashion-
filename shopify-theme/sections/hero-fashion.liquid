@@ -1,0 +1,27 @@
+<section class="bebe-hero">
+  <div class="hero-content">
+    <h1>{{ section.settings.title }}</h1>
+    <p>{{ section.settings.subtitle }}</p>
+    <a href="/collections/all" class="bebe-button">Shop Collection</a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fashion Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Luxury Fashion Powered By AI"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Discover your perfect style"
+    }
+  ]
+}
+{% endschema %}

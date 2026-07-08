@@ -1,0 +1,21 @@
+<section class="ai-stylist">
+  <h2>🤖 Ask Bebe AI Stylist</h2>
+  <p>Find outfits, styles, and fashion inspiration.</p>
+  
+  <input 
+    id="bebe-question" 
+    placeholder="Example: Find me a luxury outfit"
+    type="text"
+  />
+  
+  <button onclick="askBebeAI()">Ask Bebe AI</button>
+  
+  <div id="bebe-answer"></div>
+</section>
+
+{% schema %}
+{
+  "name": "AI Stylist",
+  "settings": []
+}
+{% endschema %}

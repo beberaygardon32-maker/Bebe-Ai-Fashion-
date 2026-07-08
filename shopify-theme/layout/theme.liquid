@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>
+    {{ page_title }}
+    {% if current_tags %} - {{ current_tags | join: ', ' }}{% endif %}
+    {% if current_page != 1 %} - Page {{ current_page }}{% endif %}
+  </title>
+
+  {{ content_for_header }}
+  {{ 'bebe-theme.css' | asset_url | stylesheet_tag }}
+</head>
+
+<body>
+  <header class="bebe-header">
+    <div class="logo">✨ Bebe AI Fashion</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/collections/all">Shop</a>
+      <a href="/blogs/news">Fashion Blog</a>
+      <a href="/account">Account</a>
+      <a href="/cart">Cart</a>
+    </nav>
+  </header>
+
+  <main>
+    {{ content_for_layout }}
+  </main>
+
+  {% section 'ai-stylist' %}
+
+  <footer class="bebe-footer">
+    <h3>Bebe AI Fashion</h3>
+    <p>Luxury fashion powered by AI ✨</p>
+    <div>
+      <a href="/policies/privacy-policy">Privacy</a>
+      <a href="/policies/terms-of-service">Terms</a>
+      <a href="/policies/refund-policy">Returns</a>
+    </div>
+  </footer>
+
+  {{ 'bebe-ai.js' | asset_url | script_tag }}
+</body>
+</html>
