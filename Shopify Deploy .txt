@@ -1,0 +1,24 @@
+Shopify Deploy
+# .github/workflows/deploy.yml
+
+name: Deploy to Shopify
+
+on:
+  push:
+    branches:
+      - main  # deploys whenever you push to main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Deploy Theme to Shopify
+        uses: shopify/shopify-github-action@v1
+        with:
+          store: maestro-ai-qrc97.myshopify.com
+          theme-id: 151969824907
+          shopify-cli-theme-token: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
+
+Can you add this to my file and push it  the Bebe Ai Fashion
